@@ -48,11 +48,18 @@ class Owner
     self.dogs.each{|dog| dog.mood = "happy"}
   end 
   
+  def pets
+    [dogs, cats].flatten
+  end 
+  
   def sell_pets
-    pets = [dogs, cats].flatten 
     pets.each do |pet|
       pet.owner = nil
       pet.mood = "nervous"
     end 
+  end 
+  
+  def list_pets
+    "I have #{dogs.count} dog(s), and #{cats.count} cat(s)."
   end 
 end
