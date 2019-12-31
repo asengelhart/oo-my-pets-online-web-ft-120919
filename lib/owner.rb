@@ -32,6 +32,10 @@ class Owner
     Cat.new(name, self)
   end 
   
+  def feed_cats
+    self.cats.each{|cat| cat.mood = "happy"}
+  end 
+  
   def dogs
     Dog.all.select{|dog| dog.owner == self}
   end 
